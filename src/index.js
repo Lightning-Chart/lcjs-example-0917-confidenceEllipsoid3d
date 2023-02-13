@@ -3,17 +3,15 @@
  */
 
 const lcjs = require('@arction/lcjs')
-const {
-    lightningChart,
-    PointStyle3D,
-    ColorShadingStyles,
-    Themes
-} = lcjs
+const { lightningChart, PointStyle3D, ColorShadingStyles, Themes } = lcjs
 
-const chart3D = lightningChart().Chart3D({
-    // theme: Themes.darkGold
-}).setTitle('3D scatter data set and confidence ellipsoid')
-chart3D.forEachAxis((axis) => axis.setInterval(-1.8, 1.8, false, true))
+const chart3D = lightningChart()
+    .Chart3D({
+        // theme: Themes.darkGold
+    })
+    .setTitle('3D scatter data set and confidence ellipsoid')
+
+chart3D.forEachAxis((axis) => axis.setInterval({ start: -1.8, end: 1.8 }))
 
 const scatterSeries = chart3D.addPointSeries().setName('Scatter series')
 const confidenceEllipsoidSeries = chart3D.addPointSeries().setName('Confidence ellipsoid')
