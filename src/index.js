@@ -7,7 +7,7 @@ const { lightningChart, PointStyle3D, ColorShadingStyles, Themes } = lcjs
 
 const chart3D = lightningChart()
     .Chart3D({
-        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
+        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
     })
     .setTitle('3D scatter data set and confidence ellipsoid')
 
