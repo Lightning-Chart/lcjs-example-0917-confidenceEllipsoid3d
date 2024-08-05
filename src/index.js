@@ -2,7 +2,7 @@
  * Example showcasing 3D variant of popular 2D statistics data visualization method of confidence ellipses
  */
 
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 const { lightningChart, PointStyle3D, ColorShadingStyles, Themes } = lcjs
 
 const chart3D = lightningChart({
@@ -16,7 +16,7 @@ const chart3D = lightningChart({
 chart3D.forEachAxis((axis) => axis.setInterval({ start: -1.8, end: 1.8 }))
 
 const scatterSeries = chart3D.addPointSeries().setName('Scatter series')
-const confidenceEllipsoidSeries = chart3D.addPointSeries().setName('Confidence ellipsoid')
+const confidenceEllipsoidSeries = chart3D.addPointSeries().setName('Confidence ellipsoid').setMouseInteractions(false)
 
 const xSize = 1.2
 const ySize = 1.2
