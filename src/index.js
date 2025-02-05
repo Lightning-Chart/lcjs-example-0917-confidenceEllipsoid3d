@@ -16,7 +16,7 @@ const chart3D = lightningChart({
 chart3D.forEachAxis((axis) => axis.setInterval({ start: -1.8, end: 1.8 }))
 
 const scatterSeries = chart3D.addPointSeries().setName('Scatter series')
-const confidenceEllipsoidSeries = chart3D.addPointSeries().setName('Confidence ellipsoid').setMouseInteractions(false)
+const confidenceEllipsoidSeries = chart3D.addPointSeries().setName('Confidence ellipsoid').setPointerEvents(false)
 
 const xSize = 1.2
 const ySize = 1.2
