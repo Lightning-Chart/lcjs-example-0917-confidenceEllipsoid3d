@@ -3,12 +3,13 @@
  */
 
 const lcjs = require('@lightningchart/lcjs')
-const { lightningChart, PointStyle3D, ColorShadingStyles, Themes } = lcjs
+const { lightningChart, PointStyle3D, ColorShadingStyles, Themes, LegendPosition } = lcjs
 
 const chart3D = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
         })
     .Chart3D({
+        legend: { position: LegendPosition.RightCenter },
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('3D scatter data set and confidence ellipsoid')
@@ -52,5 +53,3 @@ confidenceEllipsoidSeries
         }),
     )
     .add({ x: 0, y: 0, z: 0 })
-
-const legend = chart3D.addLegendBox().add(chart3D)
